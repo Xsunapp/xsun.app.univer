@@ -2061,8 +2061,7 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase
 
     import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
     
-    import { GoogleAuthProvider, signInWithRedirect } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
-
+    import { GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
     
         const firebaseConfig = {
   apiKey: "AIzaSyCtPB6FBM0-xr3VdpcZOypdtPNWSrdRqFo",
@@ -2126,77 +2125,83 @@ const provider = new GoogleAuthProvider();
 
 
 // دالة تسجيل الدخول باستخدام Google
+
 const googleSignIn = async () => {
   try {
-    // تسجيل الدخول باستخدام مصادقة Google عبر نافذة منبثقة
-    await signInWithRedirect(auth, provider);
+    // تسجيل الدخول باستخدام مصادقة Google
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    const userDocRef = doc(db, "Users", user.email);
+    const userDocSnap = await getDoc(userDocRef);
+    
+    let newUID, newInvitationCode;
 
-    // بعد تسجيل الدخول، سيتم إعادة توجيه المستخدم إلى الصفحة الأصلية
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const userDocRef = doc(db, "Users", user.email);
-        const userDocSnap = await getDoc(userDocRef);
+    // التحقق مما إذا كان المستخدم موجودًا بالفعل في قاعدة البيانات
+    if (userDocSnap.exists()) {
+      // إذا كان المستخدم موجودًا، لا نقوم بتغيير UID أو رمز الدعوة
+      newUID = userDocSnap.data().uid;
+      newInvitationCode = userDocSnap.data().invitationCode;
+    } else {
+      // إذا لم يكن موجودًا، نقوم بإنشاء UID ورمز دعوة جديدين
+      newUID = generateUID();
+      newInvitationCode = generateInvitationCode();
 
-        let newUID, newInvitationCode;
+      // إضافة بيانات المستخدم الجديدة إلى Firestore
+      await setDoc(userDocRef, {
+        email: user.email,
+        displayName: user.displayName,
+        miningTime: 43200,
+        balance: 0.05,
+        btcBalance: 0.000000001,
+        invitationCode: newInvitationCode,  // تخزين رمز الدعوة
+        referralBalance: 0,
+        referralHistory: [],
+        uid: newUID,
+      }, { merge: true });
+    }
 
-        // التحقق مما إذا كان المستخدم موجودًا بالفعل في قاعدة البيانات
-        if (userDocSnap.exists()) {
-          newUID = userDocSnap.data().uid;
-          newInvitationCode = userDocSnap.data().invitationCode;
-        } else {
-          newUID = generateUID();
-          newInvitationCode = generateInvitationCode();
+    // عرض رمز الدعوة للمستخدم (إذا كان هناك عرض)
+    const invitationCodeDisplay = document.querySelector("#invitationCodeDisplay");
+    if (invitationCodeDisplay) {
+      invitationCodeDisplay.value = "Invitation Code: " + newInvitationCode;
+    }
 
-          // إضافة بيانات المستخدم الجديدة إلى Firestore
-          await setDoc(userDocRef, {
-            email: user.email,
-            displayName: user.displayName,
-            miningTime: 43200,
-            balance: 0.05,
-            btcBalance: 0.000000001,
-            invitationCode: newInvitationCode,
-            referralBalance: 0,
-            referralHistory: [],
-            uid: newUID,
-          }, { merge: true });
-        }
+    // تحقق من إذا كان هناك رمز دعوة مُستخدم أثناء التسجيل
+    const referralCode = sessionStorage.getItem('referralCode');  // افترض أن رمز الدعوة تم تخزينه في sessionStorage
+    if (referralCode) {
+      // جلب بيانات المستخدم المضيف بناءً على رمز الدعوة
+      const hostUserRef = doc(db, "Users", referralCode);
+      const hostUserSnap = await getDoc(hostUserRef);
 
-        const invitationCodeDisplay = document.querySelector("#invitationCodeDisplay");
-        if (invitationCodeDisplay) {
-          invitationCodeDisplay.value = "Invitation Code: " + newInvitationCode;
-        }
-
-        const referralCode = sessionStorage.getItem('referralCode');
-        if (referralCode) {
-          const hostUserRef = doc(db, "Users", referralCode);
-          const hostUserSnap = await getDoc(hostUserRef);
-
-          if (hostUserSnap.exists()) {
-            const currentReferralBalance = hostUserSnap.data().referralBalance || 0;
-            await updateDoc(hostUserRef, {
-              referralBalance: currentReferralBalance + 0.002,
-              referralHistory: arrayUnion(user.email)
-            });
-          }
-        }
-
-        showMessage("Signed in successfully!");
-        console.log("Signed in as:", user.displayName);
+      if (hostUserSnap.exists()) {
+        // إضافة 0.002 إلى رصيد الدعوات للمضيف
+        const currentReferralBalance = hostUserSnap.data().referralBalance || 0;
+        await updateDoc(hostUserRef, {
+          referralBalance: currentReferralBalance + 0.002,
+          referralHistory: arrayUnion(user.email)  // إضافة البريد الإلكتروني للشخص المدعو إلى تاريخ الإحالات
+        });
       }
-    });
+    }
+
+    showMessage("Signed in successfully!");
+    console.log("Signed in as:", user.displayName);
   } catch (error) {
     console.error("Error signing in with Google: ", error.message);
     showMessage("Error: " + error.message);
   }
 };
 
-// ربط الزر مع دالة تسجيل الدخول
+// ربط الزر مع دالة تسجيل الدخول في كلا الصفحتين
+
+
 document.addEventListener("DOMContentLoaded", function() {
+  // ربط الزر في صفحة تسجيل الدخول
   const googleSignInButtonLogin = document.getElementById("googleSignInButtonLogin");
   if (googleSignInButtonLogin) {
     googleSignInButtonLogin.addEventListener("click", googleSignIn);
   }
 
+  // ربط الزر في صفحة إنشاء الحساب
   const googleSignInButtonSignup = document.getElementById("googleSignInButtonSignup");
   if (googleSignInButtonSignup) {
     googleSignInButtonSignup.addEventListener("click", googleSignIn);
