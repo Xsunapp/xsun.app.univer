@@ -691,7 +691,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 5px;
-    font-size: 3vw;
+    font-size: 1.3vw;
     width: 100%; /* التأكد من أن الفوتر يمتد عبر كامل عرض الصفحة */
     box-sizing: border-box; /* لضمان تناسق الحواف والمسافات */
 }
@@ -721,7 +721,7 @@ footer a:hover {
 
 /* تنسيق النص الخاص بحقوق الملكية */
 footer .credit {
-    font-size: 1vw;
+    font-size: 0.5vw;
     color: #777;
     text-align: center;
     margin-top: 10px;
@@ -771,19 +771,18 @@ footer .credit {
     font-size: 3vw;
     color: white; /* لون ذهبي قوي */
     line-height: 1.8;
-    max-width: 800px;
+    max-width: 85%;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.8); /* خلفية سوداء شفافة */
+    background-color: rgba(0, 0, 0, 0.8); /* خلفية سوداء شفافة */;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 1vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     font-family: 'Lobster', cursive; /* خط زخرفي */
     text-align: center;
     letter-spacing: 3px; /* زيادة التباعد بين الحروف */
     text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
-    border: 2px solid #FFD700; /* إطار ذهبي */
-    text-shadow: 2px 2px 6px rgba(255, 215, 0, 0.5); /* تأثير ظل النص */
-    animation: glow 2s infinite alternate; /* تأثير توهج */
+    
+    font-weight: 900;
 }
 
 /* تأثير توهج النص */
@@ -904,6 +903,8 @@ footer .credit {
     margin: 0 auto;
   }
 }
+
+
       
     </style>
 </head>
@@ -930,7 +931,15 @@ footer .credit {
     <div class="sidebar-item" onclick="scrollToSection('buy-now')">buy</div>
     
     
-    <button onclick="showWhitepaper()" style="font-size: 4vw; background-color: gold; border-radius: 1vw; color: ;padding: 3vw;">Whitepaper</button>
+         <button onclick="showLegalNotice()" style="font-size: 4vw; background-color: red; border-radius: 2vw; color: white; padding: 3vw">
+    Legal Notice
+</button>
+
+    
+    
+    <button onclick="showWhitepaper()" style="font-size: 4vw; background-color: gold; border-radius: 2vw; color: ;padding: 3vw;">Whitepaper</button>
+   
+ 
     
 </div>
 
@@ -942,9 +951,11 @@ footer .credit {
     <!-- Hero Section -->
     <section class="hero" style="background-image: url(''); background-size: cover; background-position: right; background-color: white">
       
-           
+               
+
     
  <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/440px-D._B._Cooper_jump.gif?alt=media&token=c2ae81da-b88d-4d54-af5a-a9b06807f1a0" alt="" style="width: 100%; height: auto; border-radius: 0px; left: 0; position: ; top: -0vw">
+
 
 
 
@@ -973,19 +984,23 @@ footer .credit {
     </section>
     
     
+    <br>
+    
+
+    
+    
 <section style="background-color: white; text-align: center;">
   
-
   
+
+
 
   
   
        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images__5_-removebg-preview_11zon.png?alt=media&token=ce570630-f8f2-48eb-8915-8d350d129dc7" alt="" style="width: 20%; height: auto; border-radius: 10px">
   
   
-        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images__5_-removebg-preview_11zon.png?alt=media&token=ce570630-f8f2-48eb-8915-8d350d129dc7" alt="" style="width: 20%; height: auto; border-radius: 10px">
-  
-       
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(4).jpeg?alt=media&token=c7a06f13-fd79-4441-b6e3-748cee788268" alt="" class="about-image" style="margin-top: ">
   
   
 
@@ -998,30 +1013,43 @@ footer .credit {
     <p2 style="font-size: 5vw; font-weight: bold; color: black; font-family: 'Courier New', Courier, monospace; text-transform: uppercase; letter-spacing: 2px;">
         
     </p2>
+
+
 </section>
 
- <br>
+
  
  
 
 
 
+
+
+
+    
 <div style="text-align: center; font-family: 'Arial', sans-serif; color: #FFD700; text-shadow: 2px 2px 4px #333; background-color: ">
   <h2 style="font-size: 3vw; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px solid #FFD700; display: inline-block; padding-bottom: 10px; color: black; background-color:">
-    🇺🇸✧ ✦ ✧ ABOUT D.B COOPER! ✧ ✦ ✧🇺🇸
+    🇺🇸<span style="color: #ffffff; text-shadow: 1px 1px 5px #005a8c, 0 0 25px #fff, 0 0 5px #fff;">✧</span>
+    <span style="color: #005a8c; text-shadow: 1px 1px 5px #005a8c, 0 0 25px #fff, 0 0 5px #fff;">✦</span> 
+    <span style="color: #d50032; text-shadow: 1px 1px 5px #005a8c, 0 0 25px #fff, 0 0 5px #fff;">✧</span>
+    ABOUT D.B COOPER! 
+    <span style="color: #ffffff; text-shadow: 1px 1px 5px #005a8c, 0 0 25px #fff, 0 0 5px #fff;">✧</span>
+    <span style="color: #005a8c; text-shadow: 1px 1px 5px #005a8c, 0 0 25px #fff, 0 0 5px #fff;">✦</span>
+    <span style="color: #d50032; text-shadow: 1px 1px 5px #005a8c, 0 0 25px #fff, 0 0 5px #fff;">✧🇺🇸</span>
   </h2>
 </div>
 
 
-    </section>
-    
+
 
     
 
 <section id="about-section" class="about-section" style="background-image: url(''); background-size: cover; background-position: right; background-color: white;">
-  <h2> 
-    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(4).jpeg?alt=media&token=c7a06f13-fd79-4441-b6e3-748cee788268" alt="" class="about-image">
-  </h2>
+  
+
+
+
+<br>
 
 <div class="about-content">
   <div class="about-text">
@@ -1061,7 +1089,7 @@ footer .credit {
     Once **Cooper** hands you a note, you’ll know—**the curse and madness have begun**. The white paper will go to the one who dares to take control.
   </div>
 
-  <div class="about-text" style="font-weight: bold; text-align: center; color: #007BFF;">
+  <div class="about-text" style="font-weight: bold; text-align: center; color: #007BFF; max-width: 90%;">
     "Let’s make chaos work for us!"<br> **D.B. Cooper**
   </div>
 </div>
@@ -1071,6 +1099,8 @@ footer .credit {
 
   <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241202_002756.jpg?alt=media&token=6f254dc1-af4e-4f95-b908-05cdb1bba140" alt="Image" style="width: 80%; height: auto; border-radius: 10px">
   
+  
+   <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241207_231159.jpg?alt=media&token=2ab47ecf-6b1e-4c79-9971-da15b96fe217" alt="Image" style="width: 80%; height: auto; border-radius: 10px">
   
   
 </section>
@@ -1142,82 +1172,53 @@ footer .credit {
     
   
     <!-- Roadmap Section -->
+<!-- Roadmap Section -->
 <section id="roadmap" class="roadmap">
-  <h2 style="text-align: center; font-size: 7vw; color: black;font-family: 'Lobster', cursive;
+  <h2 style="text-align: center; font-size: 7vw; color: black; font-family: 'Lobster', cursive; animation: glow 2s infinite alternate;">
+    Roadmap
+  </h2>
+  <div style="max-width: 800px; margin: auto; text-align: center;">
+
+    <!-- Phase 1 -->
+    <div style="margin-bottom: 2em;">
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 1" style="width: 120px; height: auto;">
+      <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive; animation: glow 2s infinite">Phase 1: D.B. Cooper Takes Flight</h3>
+      <p style="font-size: 3.5vw;">
+        Cooper’s back, and this time he’s hijacking more than just planes he’s jumping into the crypto world. Forget the presales, just pure moon-bound vibes. Liquidity locked tighter than a cargo hold. Community in control ready for takeoff!
+      </p>
+    </div>
+
+    <!-- Phase 2 -->
+    <div style="margin-bottom: 2em;">
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 2" style="width: 120px; height: auto;">
+      <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive; animation: glow 2s infinite">Phase 2: The Flight Crew Takes Control</h3>
+      <p style="font-size: 3.5vw;">
+        Time for the community to steer this flight. Are we heading to centralized exchanges or creating our own airspace? You’re the pilots let’s make it go viral!
+      </p>
+    </div>
+
+    <!-- Phase 3 -->
+    <div style="margin-bottom: 2em;">
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 3" style="width: 120px; height: auto;">
+      <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive; animation: glow 2s infinite">Phase 3: Takeoff to Major Listings</h3>
+      <p style="font-size: 3.5vw;">
+        We’re making noise in crypto, just like Cooper did in the 70s. Forget the rug pulls, we're about memes and community power. Listings are just the beginning expect a Cooper NFT or maybe a flight-themed metaverse.
+      </p>
+    </div>
+
+    <!-- Phase 4 -->
+    <div style="margin-bottom: 2em;">
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 4" style="width: 120px; height: auto;">
+      <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive; animation: glow 2s infinite">Phase 4: D.B. Cooper Lands in the Big League</h3>
+      <p style="font-size: 3.5vw;">
+        Now Cooper's aiming for the big leagues. Forget the small jumps this coin's going legendary. Taxes? Tricks? Not here. Just pure Cooper action NFTs, a metaverse, and more to come. Ready for takeoff? The sky’s the limit!
+      </p>
+    </div>
     
-    
-    
-    animation: glow 2s infinite alternate;">
-
-    Roadmap</h2>
-   <div style="max-width: 800px; margin: auto; text-align: center;">
- 
-        <!-- Phase 1 -->
-        <div style="margin-bottom: 2em;">
-          <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 1" style="width: 120px; height: auto;">
-          <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive;
-            
-            
-            
-            animation: glow 2s infinite">Phase 1: D.B. Cooper Takes Flight</h3>
-          <p style="font-size: 3.5vw;">
-            D.B. Cooper is back, and this time, he’s hijacking more than just a plane. Forget the skydiving stunts—Cooper is parachuting straight into the crypto world with a mission to launch and take over.
-            No presales, no rug pulls, just straight to the moon.
-            Liquidity locked like a safe in an airplane cargo hold—secure and unshakable.
-            The community is in the cockpit! You decide if we take this flight to the top or crash into mediocrity.
-          </p>
-        </div>
-
-        <!-- Phase 2 -->
-        <div style="margin-bottom: 2em;">
-          <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 2" style="width: 120px; height: auto;">
-          <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive;
-            
-            
-            
-            animation: glow 2s infinite">Phase 2: The Flight Crew Takes Control</h3>
-          <p style="font-size: 3.5vw;">
-            It’s time for D.B. Cooper to pass the controls to the community—let’s make the flight path our own. Will we land on centralized exchanges, decentralized platforms, or take a detour and start something completely new?
-            You’re the pilots. You decide if we’re flying high or cruising steady.
-            Keep spreading the word, and let’s get trending faster than Cooper’s parachute descent.
-            No scammers in the cockpit. Just a steady, reliable flight to the top.
-          </p>
-        </div>
-
-        <!-- Phase 3 -->
-        <div style="margin-bottom: 2em;">
-          <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 3" style="width: 120px; height: auto;">
-          <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive;
-            
-            
-            
-            animation: glow 2s infinite">Phase 3: Takeoff to Major Listings</h3>
-          <p style="font-size: 3.5vw;">
-            Just like D.B. Cooper’s daring hijacking, this coin is making a statement. We’re here to soar, and listings are just the beginning.
-            Forget the drama, no rug pulls or shady moves—just pure Cooper energy.
-            Organic growth driven by the power of memes and the strength of our community.
-            The goal? Keep rising, keep building, and who knows? Maybe we'll throw in a Cooper NFT or an air-themed metaverse.
-          </p>
-        </div>
-
-        <!-- Phase 4 -->
-        <div style="margin-bottom: 2em;">
-          <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(5).jpeg?alt=media&token=55d16ba2-2d17-4d9b-a9c5-b28b39b50aba" alt="Phase 4" style="width: 120px; height: auto;">
-          <h3 style="font-size: 6vw; color: red; font-family: 'Lobster', cursive;
-            
-            
-            
-            animation: glow 2s infinite">Phase 4: D.B. Cooper Lands in the Big League</h3>
-          <p style="font-size: 3.5vw;">
-            Cooper is done with small-time jumps—now it's time for the big leagues. We’re aiming high, and this time, the landing is smooth and guaranteed.
-            No taxes, no tricks—just pure, unfiltered Cooper action to make this coin legendary.
-            As we soar higher, the sky’s the limit—NFTs, a crypto metaverse, and maybe even a flight simulator for all the fans.
-            Once Cooper takes the helm, the game is on. Forget the crashes of the past; this time, we’re in control.
-          </p>
-        </div>
-
-        </div>
+  </div>
+  <p style="font-size: 3.5vw; color: gold;">Do you really think D.B. Cooper has a roadmap? LOL, but hey, we're going places!</p>
 </section>
+
 
 <section id="roadmap" class="roadmap">
   <h2 style="text-align: center; font-size: 7vw; color: red;font-family: 'Lobster', cursive;
@@ -1298,41 +1299,90 @@ Exercise caution and only invest what you can afford to lose.
   font-weight: 900; 
   margin-left: 0%; 
   line-height: 1.5;">
-  Since the token is listed on Pump.fun, the largest holder will receive ownership of the contract. Along with this, the website and all associated accounts will be transferred, and any modifications can be made at the owner's discretion. The only condition is a one-time fee of 5% of their token holdings.
-
-
+  Ownership can be transferred unconditionally. The largest token holder will automatically receive full ownership of the contract, including the website and all related accounts, with complete freedom to make any modifications.
 </h2>
+
+</section>
+
+<br>
+
+
+      <section>
+      
+    <div style="display: flex; align-items: center; display: flex; justify-content: center; align-items: center;">
+  <!-- النص "Wanted Since" والتاريخ -->
+  <div style="margin-right: px; justify-content: center; align-items: center;">
+    <h2 style="font-size: 3vw; color: red; font-weight: 900; text-transform: uppercase; justify-content: center; align-items: center;">Wanted Since:</h2>
+    
+
+    
+    <h2 id="event-date" style="font-size: 3vw; color: black; justify-content: center; align-items: center;">November 24, 1971</h2>
+  </div>
+
+  <!-- الصورة على اليمين -->
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(4).jpeg?alt=media&token=c7a06f13-fd79-4441-b6e3-748cee788268" 
+       alt="" class="about-image" 
+       style="width: 10%; height: auto; border-radius: 10px; margin-left: 4vw;">
+</div>
+
+
+
+
+<div id="time-elapsed" style="font-size: 2.8vw; color: gold; margin-top: 3vw; font-weight: 900; background-color: black; padding: 2vw; border-radius: 0.5vw; display: inline-block;"></div>
+  
+      
+      </section>
+
+
+
+
+<section style="background-color: white; text-align: center;">
+  
+
+ 
+<br>
+  
+  
+       <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241203_215837-removebg-preview.png?alt=media&token=4aedf764-7d04-4d66-8872-62bbf7f6ef7e" alt="" style="width: 20%; height: auto; border-radius: 10px">
+  
+  
+  <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/getimg_ai_img-qnLQFbe0eS419AJuN7C53-removebg-preview.png?alt=media&token=32f94ea3-f6eb-4dd4-963e-be7de65e6c1b" alt="" style="width: 20%; height: auto; border-radius: 10px">
+  
+  
+        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/D.B%20Cooper.png?alt=media&token=8e76b1b8-bea9-4218-bef9-a8cf541a7d02" alt="" style="width: 20%; height: auto; border-radius: 10px">
+  
+       
+  
+  
+
+  
+        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241202_221204.jpg?alt=media&token=a2fe45d8-8c09-4922-9d94-cc5b45740a90" alt="" style="width: 20%; height: auto; border-radius: 10px">
+  
+ 
+  
+        
+    <p2 style="font-size: 5vw; font-weight: bold; color: black; font-family: 'Courier New', Courier, monospace; text-transform: uppercase; letter-spacing: 2px;">
+        
+    </p2>
+    <br><br>
+    <button onclick="showWhitepaper()" style="font-size: 4vw; background-color: gold; border-radius: 1vw; color: black;padding: 3vw; font-weight: 900;">Whitepaper </button>
 
 </section>
 
 
 
+
     <!-- Dog Image Section -->
     <section class="dog-image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/il_340x270.4545609786_178o-removebg-preview.png?alt=media&token=be8efcfd-4e42-48b9-a95b-57d15a15fbf4" alt="">
-      
-    </section>
-      <section class="dog-image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/getimg_ai_img-qnLQFbe0eS419AJuN7C53-removebg-preview.png?alt=media&token=32f94ea3-f6eb-4dd4-963e-be7de65e6c1b" alt="">
-    
-      </section>
-      
-    
-           <section class="dog-image">
-             <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241202_221204.jpg?alt=media&token=a2fe45d8-8c09-4922-9d94-cc5b45740a90" alt="">
-     
-           </section>
-    
 
-    
-    
-      <section class="dog-image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/D.B%20Cooper.png?alt=media&token=8e76b1b8-bea9-4218-bef9-a8cf541a7d02" alt="">
-    
+
+
      
+     
+
       </section>
       
-      
+
  
       
 
@@ -1497,13 +1547,19 @@ document.addEventListener("DOMContentLoaded", () => {
 function showWhitepaper() {
     // إخفاء الصفحة الرئيسية وإظهار صفحة الـ Whitepaper
     document.body.innerHTML = `
-        <section id="whitepaper" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333;">
-            <h1 style="font-size: 3rem; margin-bottom: 20px;">"Are you serious? LMAO 💩"</h1>
-            <div class="dancing-emoji" style="font-size: 5rem;">💩</div>
-            <p style="margin-top: 20px; font-size: 1.5rem; color: #555;">Welcome to the most chaotic whitepaper ever!</p>
-            <button onclick="goBack()" style="margin-top: 30px; padding: 10px 20px; font-size: 1.2rem; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
-                Take me back to sanity!
-            </button>
+        <section id="whitepaper" style="position: relative; height: 100vh; font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 style="font-size: 6.5vw; color: red; text-align: center; font-weight: 900; border-bottom: 3px solid black; padding-bottom: 5px;">
+                 WHITEPAPER 🧻
+            </h1>
+            
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 2vh;">
+                <h1 style="font-size: 9vw; margin-bottom: 20px;">Are you serious? LMAO </h1>
+                <div class="dancing-emoji" style="font-size: 14vw;">💩</div>
+                <p style="margin-top: 20px; font-size: 7vw; color: #555;"></p>
+                <button onclick="goBack()" style="margin-top: 30px; padding: 10px 20px; font-size: 7vw; background-color: #007BFF; color: white; border: none; border-radius: 1vw; cursor: pointer; transition: background-color 0.3s; font-weight: 900;">
+                    Take me back to sanity!
+                </button>
+            </div>
         </section>
         <style>
             .dancing-emoji {
@@ -1600,6 +1656,112 @@ function showWhitepaper() {
 function goBack() {
     location.reload(); // إعادة تحميل الصفحة لإرجاع المحتوى الأصلي
 }
+
+
+function updateWantedCounter() {
+  // تاريخ الحدث: 24 نوفمبر 1971
+  const eventDate = new Date('1971-11-24T00:00:00Z');
+  const now = new Date();
+
+  // حساب الفرق بالوقت
+  const elapsed = now - eventDate;
+
+  // تحويل الوقت إلى سنوات، أشهر، أيام، ساعات، دقائق وثواني
+  const years = Math.floor(elapsed / (1000 * 60 * 60 * 24 * 365.25));
+  const months = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+  const days = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+  // تحديث النص
+  const counter = document.getElementById('time-elapsed');
+  counter.innerHTML = `
+      ${years} YEARS, ${months} MONTHS, ${days} DAYS,
+      ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS
+    `;
+}
+
+// تشغيل التحديث كل ثانية
+setInterval(updateWantedCounter, 1000);
+updateWantedCounter(); // التحديث الفوري عند تحميل الصفحة
+
+
+
+
+
+
+
+function showLegalNotice() {
+    // إخفاء الصفحة الرئيسية وإظهار صفحة الملاحظة القانونية
+    document.body.innerHTML = `
+        <section id="legalNotice" style="position: relative; height: 100vh; font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 5vw; overflow-y: auto;">
+            <h1 style="font-size: 6.5vw; color: red; text-align: center; font-weight: 900; border-bottom: 3px solid black; padding-bottom: 4vw; margin: 0;">
+                Important Disclaimer and Clarification
+            </h1>
+
+            <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; text-align: left; padding-top: 8vw; width: 100%; max-width: 900px;">
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>DB Cooper</strong> is a fictionalized and speculative figure for the purposes of this cryptocurrency meme project. Below are the key aspects explaining the fictional and satirical nature of the project:
+                </p>
+                
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Key Points About the Project and Character:</strong>
+                    <br>1. <strong>The Name "DB Cooper":</strong> The name is a pseudonym created during media coverage of an unsolved hijacking case in the 1970s. It is not a real name, nor is it tied to a confirmed individual, making it legally and ethically open for creative use.
+                    <br>2. <strong>Artistic Nature of Imagery:</strong> The images traditionally associated with "DB Cooper" are artist-rendered sketches based on witness descriptions during the investigation. These sketches do not depict a real, identifiable person and are therefore not subject to personal image rights.
+                    <br>3. <strong>A Fictional and Speculative Persona:</strong> This project emphasizes that DB Cooper, as presented here, is entirely speculative and fictional.
+                    <br>4. <strong>Ethical Stance:</strong> We strongly disavow and condemn any criminal actions or implications associated with the DB Cooper case.
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Why DB Cooper Fits the Meme Coin World:</strong>
+                    <br>1. <strong>Mystery and Humor:</strong> The enigmatic nature of DB Cooper makes it a perfect candidate for a meme coin project that thrives on cultural intrigue and humor.
+                    <br>2. <strong>Focus on Fiction and Creativity:</strong> This project uses the speculative identity of DB Cooper to build a fictional narrative, focusing on creativity and entertainment rather than controversy or harm.
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Legal and Compliance Considerations:</strong>
+                    <br>1. <strong>Fair Use and Parody:</strong> Under the Fair Use Doctrine (17 U.S.C. § 107), parody and satire are protected when they involve creative and transformative uses of public figures or speculative personas.
+                    <br>2. <strong>Public Domain Materials:</strong> The sketches and other imagery related to DB Cooper are non-copyrighted, investigative tools created during a public investigation, making them fair for use in creative projects.
+                    <br>3. <strong>Transparency and Disclosure:</strong> The project ensures full transparency about its purpose and disclaimers, as required under global cryptocurrency regulations.
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 4vw; line-height: 1.6;">
+                    <strong>Disclaimer for Users:</strong>
+                    <br>"This project is entirely fictional and speculative, inspired by the cultural intrigue surrounding the pseudonymous figure DB Cooper. The name and imagery are not tied to any real individual, and the project strongly disavows and condemns any criminal activities historically linked to the case. Our use of the character is purely for entertainment and humor, adhering to legal and ethical standards. The project is not an investment tool but a community-driven, meme-focused initiative meant for fun."
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Relevant Legal References and Supporting Links:</strong>
+                    <br>1. <a href="https://www.copyright.gov/fair-use" target="_blank" style="color: blue; text-decoration: underline;">Fair Use in U.S. Copyright Law</a> – Outlining protections for transformative works, parody, and satire.
+                    <br>2. <a href="https://www.copyright.gov/circs/circ01.pdf" target="_blank" style="color: blue; text-decoration: underline;">Public Domain Guidelines</a> – Legal explanation of materials free for use.
+                    <br>3. <a href="https://www.sec.gov/spotlight/cybersecurity" target="_blank" style="color: blue; text-decoration: underline;">SEC Cryptocurrency Guidelines</a> – Rules for transparency and lawful operation of crypto projects.
+                </p>
+
+                <button onclick="goBack()" style="margin-top: 4vw; padding: 2vw 4vw; font-size: 4vw; background-color: #007BFF; color: white; border: none; border-radius: 1vw; cursor: pointer; transition: background-color 0.3s; font-weight: 900;">
+                    Back
+                </button>
+            </div>
+        </section>
+        <style>
+            #legalNotice {
+                font-family: Arial, sans-serif;
+                color: #333;
+                overflow-y: auto;
+            }
+            
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    `;
+}
+
+// دالة العودة
+function goBack() {
+    location.reload(); // إعادة تحميل الصفحة لإرجاع المحتوى الأصلي
+}
+
 
 
 
